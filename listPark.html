@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ParkChain - List a Park</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ParkChain - View Parks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+    <meta name="description" content="">
 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,33 +13,45 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <!-- Navbar Content -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <!-- Logo in the Navbar -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="./booking.html">Leased Privatized Parking</a>
-            </div>
-            <!-- Elements in the Navbar -->
-            <ul class="nav navbar-nav">
-                <li><a href="./listPark.html">List a Parking Spot</a></li>
-                <li><a href="./viewParks.html">View Parking Spots</a></li>
-            </ul>
+<!-- Navbar Content -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">ParkChain</a>
         </div>
-    </nav>
-
-    <!-- Webpage Content -->
-    <div id="container" class="container">
-        <h2 style="text-align: center">ParkChain</h2> <br>
-        <!-- Buttons to Web Pages -->
-        <button onclick="window.location.href='./listPark.html';">List a Parking Spot</button>
-        <button onclick="window.location.href='./viewParks.html';">List a Parking Spot</button>
+        <ul class="nav navbar-nav">
+            <li><a href="index.html">Home Page</a> </li>
+            <li><a href="./listPark.html">List a Parking Spot</a></li>
+            <li><a href="./viewParks.html">View Available Parking Spots</a></li>
+        </ul>
     </div>
+</nav>
+<body class="text-center">
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h1 class="masthead-brand">ParkChain</h1>
+        </div>
+    </header>
 
-    <!-- Copyright Tag -->
-    <hr>
-    <footer class="container">
-        <p>&copy; Callum Bradding 2020</p>
-    </footer>
+    <main role="main" class="inner cover">
+        <h2>List a Parking Spot</h2>
+    </main>
+</div>
+
+<!-- Copyright Tag -->
+<hr>
+<footer class="container">
+    <p>&copy; Callum Bradding 2020</p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>
