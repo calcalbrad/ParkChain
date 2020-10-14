@@ -7,6 +7,9 @@
     <meta name="author" content="">
     <meta name="description" content="">
 
+    <!-- Blockchain Script -->
+    <script type="text/javascript" src="sendParkToChain.js"></script>
+
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -35,7 +38,77 @@
     </header>
 
     <main role="main" class="inner cover">
-        <h2>List a Parking Spot</h2>
+        <h2>List a Parking Spot</h2> <br>
+
+        <div id="targetDiv">
+            <p>Please enter your parking spot details below:</p><br>
+        </div>
+
+        <form id="listParkForm">
+            <p>Wallet Address: <input type="text" name="wallet_address" required/></p> <br>
+
+            <p>Street Name: <input type="text" name="park_street_name" required/></p>
+            <p>Suburb: <input type="text" name="park_suburb" required/></p>
+            <p>City: <input type="text" name="park_city" required/></p> <br>
+
+            <p>Time Available:
+                <select name="time1" id="time1">
+                    <option value="12am">12am</option>
+                    <option value="1am">1am</option>
+                    <option value="2am">2am</option>
+                    <option value="3am">3am</option>
+                    <option value="4am">4am</option>
+                    <option value="5am">5am</option>
+                    <option value="6am">6am</option>
+                    <option value="7am">7am</option>
+                    <option value="8am">8am</option>
+                    <option value="9am">9am</option>
+                    <option value="10am">10am</option>
+                    <option value="11am">11am</option>
+                    <option value="12pm">12pm</option>
+                    <option value="1pm">1pm</option>
+                    <option value="2pm">2pm</option>
+                    <option value="3pm">3pm</option>
+                    <option value="4pm">4pm</option>
+                    <option value="5pm">5pm</option>
+                    <option value="6pm">6pm</option>
+                    <option value="7pm">7pm</option>
+                    <option value="8pm">8pm</option>
+                    <option value="9pm">9pm</option>
+                    <option value="10pm">10pm</option>
+                    <option value="11pm">11pm</option>
+                </select>
+                 to:
+                <select name="time1" id="time2">
+                    <option value="12am">12am</option>
+                    <option value="1am">1am</option>
+                    <option value="2am">2am</option>
+                    <option value="3am">3am</option>
+                    <option value="4am">4am</option>
+                    <option value="5am">5am</option>
+                    <option value="6am">6am</option>
+                    <option value="7am">7am</option>
+                    <option value="8am">8am</option>
+                    <option value="9am">9am</option>
+                    <option value="10am">10am</option>
+                    <option value="11am">11am</option>
+                    <option value="12pm">12pm</option>
+                    <option value="1pm">1pm</option>
+                    <option value="2pm">2pm</option>
+                    <option value="3pm">3pm</option>
+                    <option value="4pm">4pm</option>
+                    <option value="5pm">5pm</option>
+                    <option value="6pm">6pm</option>
+                    <option value="7pm">7pm</option>
+                    <option value="8pm">8pm</option>
+                    <option value="9pm">9pm</option>
+                    <option value="10pm">10pm</option>
+                    <option value="11pm">11pm</option>
+                </select>
+            </p> <br>
+
+            <input type="submit" value="Make Park Available" onclick="sendParkToChain.js">
+        </form>
     </main>
 </div>
 
