@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
-    <title>ParkChain - View Parks</title>
+    <title>ParkChain - List Parks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
     <meta name="description" content="">
 
-    <!-- Blockchain Script -->
-    <script type="text/javascript" src="sendParkToChain.js"></script>
+    <!-- Blockchain Script
+    <script type="module" src="blockchain.js"></script> -->
+    <script type="text/javascript" src="validatePark.js"></script>
 
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -53,61 +53,62 @@
 
             <p>Time Available:
                 <select name="time1" id="time1">
-                    <option value="12am">12am</option>
-                    <option value="1am">1am</option>
-                    <option value="2am">2am</option>
-                    <option value="3am">3am</option>
-                    <option value="4am">4am</option>
-                    <option value="5am">5am</option>
-                    <option value="6am">6am</option>
-                    <option value="7am">7am</option>
-                    <option value="8am">8am</option>
-                    <option value="9am">9am</option>
-                    <option value="10am">10am</option>
-                    <option value="11am">11am</option>
-                    <option value="12pm">12pm</option>
-                    <option value="1pm">1pm</option>
-                    <option value="2pm">2pm</option>
-                    <option value="3pm">3pm</option>
-                    <option value="4pm">4pm</option>
-                    <option value="5pm">5pm</option>
-                    <option value="6pm">6pm</option>
-                    <option value="7pm">7pm</option>
-                    <option value="8pm">8pm</option>
-                    <option value="9pm">9pm</option>
-                    <option value="10pm">10pm</option>
-                    <option value="11pm">11pm</option>
+                    <option value=0>12am</option>
+                    <option value=1>1am</option>
+                    <option value=2>2am</option>
+                    <option value=3>3am</option>
+                    <option value=4>4am</option>
+                    <option value=5>5am</option>
+                    <option value=6>6am</option>
+                    <option value=7>7am</option>
+                    <option value=8>8am</option>
+                    <option value=9>9am</option>
+                    <option value=10>10am</option>
+                    <option value=11>11am</option>
+                    <option value=12>12pm</option>
+                    <option value=13>1pm</option>
+                    <option value=14>2pm</option>
+                    <option value=15>3pm</option>
+                    <option value=16>4pm</option>
+                    <option value=17>5pm</option>
+                    <option value=18>6pm</option>
+                    <option value=19>7pm</option>
+                    <option value=20>8pm</option>
+                    <option value=21>9pm</option>
+                    <option value=22>10pm</option>
+                    <option value=23>11pm</option>
                 </select>
                  to:
-                <select name="time1" id="time2">
-                    <option value="12am">12am</option>
-                    <option value="1am">1am</option>
-                    <option value="2am">2am</option>
-                    <option value="3am">3am</option>
-                    <option value="4am">4am</option>
-                    <option value="5am">5am</option>
-                    <option value="6am">6am</option>
-                    <option value="7am">7am</option>
-                    <option value="8am">8am</option>
-                    <option value="9am">9am</option>
-                    <option value="10am">10am</option>
-                    <option value="11am">11am</option>
-                    <option value="12pm">12pm</option>
-                    <option value="1pm">1pm</option>
-                    <option value="2pm">2pm</option>
-                    <option value="3pm">3pm</option>
-                    <option value="4pm">4pm</option>
-                    <option value="5pm">5pm</option>
-                    <option value="6pm">6pm</option>
-                    <option value="7pm">7pm</option>
-                    <option value="8pm">8pm</option>
-                    <option value="9pm">9pm</option>
-                    <option value="10pm">10pm</option>
-                    <option value="11pm">11pm</option>
+                <select name="time2" id="time2">
+                    <option value=0>12am</option>
+                    <option value=1>1am</option>
+                    <option value=2>2am</option>
+                    <option value=3>3am</option>
+                    <option value=4>4am</option>
+                    <option value=5>5am</option>
+                    <option value=6>6am</option>
+                    <option value=7>7am</option>
+                    <option value=8>8am</option>
+                    <option value=9>9am</option>
+                    <option value=10>10am</option>
+                    <option value=11>11am</option>
+                    <option value=12>12pm</option>
+                    <option value=13>1pm</option>
+                    <option value=14>2pm</option>
+                    <option value=15>3pm</option>
+                    <option value=16>4pm</option>
+                    <option value=17>5pm</option>
+                    <option value=18>6pm</option>
+                    <option value=19>7pm</option>
+                    <option value=20>8pm</option>
+                    <option value=21>9pm</option>
+                    <option value=22>10pm</option>
+                    <option value=23>11pm</option>
                 </select>
             </p> <br>
 
-            <input type="submit" value="Make Park Available" onclick="sendParkToChain.js">
+            <input type="submit" value="Make Park Available" onclick="validateData('targetDiv', wallet_address.value,
+            park_street_name.value, park_suburb.value, park_city.value, time1.value, time2.value)">
         </form>
     </main>
 </div>
