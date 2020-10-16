@@ -1,5 +1,4 @@
 function validateData(divID, aWalletAddress, aStreetName, aSuburb, aCity, aTime1, aTime2) {
-    console.log("Hello");
     var isDataValid = true;
 
     var obj = document.getElementById(divID);
@@ -20,11 +19,13 @@ function validateData(divID, aWalletAddress, aStreetName, aSuburb, aCity, aTime1
         isDataValid = false;
     }
 
+    console.log(aTime1,"&", aTime2);
     if (aTime1 >= aTime2) {
         isDataValid = false;
     }
 
     if (isDataValid) {
+        //TODO: Send the data to Blockchain
 
     } else {
         obj.innerHTML = "Error! Data is not valid!";
