@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
     <meta charset="UTF-8">
     <title>ParkChain - List Parks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
     <meta name="description" content="">
 
-    <!-- Blockchain Script
-    <script type="module" src="blockchain.js"></script> -->
+    <!-- Blockchain Script -->
+    <script type="text/javascript" src="xhr.js"></script>
+    <script type="text/javascript" src="blockchain.js"></script>
     <script type="text/javascript" src="validatePark.js"></script>
 
     <!-- Bootstrap CDN -->
@@ -107,8 +108,8 @@
                 </select>
             </p> <br>
 
-            <input type="submit" value="Make Park Available" onclick="validateData('targetDiv', wallet_address.value,
-            park_street_name.value, park_suburb.value, park_city.value, time1.value, time2.value)">
+            <input type="button" value="Make Park Available" onclick="validateData('blockchain.js', 'targetDiv',
+            wallet_address.value, park_street_name.value, park_suburb.value, park_city.value, time1.value, time2.value)">
         </form>
     </main>
 </div>
