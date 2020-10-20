@@ -2293,7 +2293,7 @@ const signer = ethers.Wallet.createRandom().connect(provider);
 Window.Provider = provider;
 Window.Signer = signer;
 
-const parkChainAddress = "0x86938387a65d4fe7afa5083d4c0cd919ce276675";
+const parkChainAddress = "0xbf697a3f933e9ff4f5b008032b5e78894197bb2a";
 const parkChainAbi = [
         {
             "constant": true,

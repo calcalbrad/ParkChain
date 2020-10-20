@@ -10,9 +10,12 @@ function parkToChainTransaction(dataSource, divID, aStreetName, aSuburb, aCity, 
     let numberOfTokens = aTime2-aTime1;
 
     for (let x = 0; x < numberOfTokens; ++x) {
+        let overrides = {
+            gasLimit: 750000
+        };
         const contractWithSigner = contract.connect(signer);
 
-        contractWithSigner.addParkingDetails(lenderAddress, aStreetName, aSuburb, aCity, aTime1, (aTime1 + (x + 1)));
-        contractWithSigner.transfer(lenderAddress, 1);
+        contractWithSigner.approveAndCall(lenderAddress, 1, 0);
+        contractWithSigner.addParkingDetails(lenderAddress, aStreetName, aSuburb, aCity, (aTime1 + 1), (aTime1 + (x + 1)));
     }
 }
