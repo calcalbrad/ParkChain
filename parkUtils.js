@@ -1,13 +1,7 @@
-var xhr = createRequest();
-
-function validateData(dataSource, divID, aWalletAddress, aStreetName, aSuburb, aCity, aTime1, aTime2) {
+function validateData(aDataSource, aDivID, aStreetName, aSuburb, aCity, aTime1, aTime2) {
     var isDataValid = true;
 
-    var obj = document.getElementById(divID);
-
-    if (aWalletAddress.valueOf() === "") {
-        isDataValid = false;
-    }
+    var obj = document.getElementById(aDivID);
 
     if (aStreetName.valueOf() === "") {
         isDataValid = false;
@@ -26,28 +20,14 @@ function validateData(dataSource, divID, aWalletAddress, aStreetName, aSuburb, a
     }
 
     if (isDataValid) {
-        sendParkToChain (dataSource, divID, aWalletAddress, aStreetName, aSuburb, aCity, aTime1, aTime2);
+        sendParkToChain(aDataSource, aDivID, aStreetName, aSuburb, aCity, aTime1, aTime2);
     } else {
         obj.innerHTML = "Error! Data is not valid!<br><br>";
     }
 }
 
-function sendParkToChain (dataSource, divID, aWalletAddress, aStreetName, aSuburb, aCity, aTime1, aTime2) {
-    if (xhr) {
-        var obj = document.getElementById(divID);
-        var requestbody = "walletAddress=" + encodeURIComponent(aWalletAddress) + "&streetName=" +
-            encodeURIComponent(aStreetName) + "&suburb=" + encodeURIComponent(aSuburb) + "&city=" +
-            encodeURIComponent(aCity) + "&time1=" + encodeURIComponent(aTime1) + "&time2=" +
-            encodeURIComponent(aTime2);
-        console.log(dataSource);
-        xhr.open("POST", dataSource, true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                //obj.innerHTML = xhr.responseText;
-            }
-        }
-        xhr.send(requestbody);
-        document.getElementById("listParkForm").reset();
-    }
+function sendParkToChain (aDataSource, aDivID, aStreetName, aSuburb, aCity, aTime1, aTime2) {
+    $.getScript("blockchain.js", function() {
+        parkToChainTransaction(aDataSource, aDivID, aStreetName, aSuburb, aCity, aTime1, aTime2)
+    })
 }
