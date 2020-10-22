@@ -2287,13 +2287,13 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 },{"process/browser.js":4,"timers":5}],6:[function(require,module,exports){
 const { ethers } = require("ethers");
 
-const provider = new ethers.providers.Web3Provider(window.ethereum);
+const provider = new ethers.providers.Web3Provider(web3.currentProvider);
 const signer = ethers.Wallet.createRandom().connect(provider);
 
 Window.Provider = provider;
 Window.Signer = signer;
 
-const parkChainAddress = "0xbf697a3f933e9ff4f5b008032b5e78894197bb2a";
+const parkChainAddress = "0x4912dA8819AbFb84579C3946F2A7CB5240D9C117";
 const parkChainAbi = [
         {
             "constant": true,
@@ -2690,6 +2690,46 @@ const parkChainAbi = [
 const parkChainContract = new ethers.Contract(parkChainAddress, parkChainAbi, provider);
 
 Window.ParkChainContract = parkChainContract;
+
+const gasPriceForTx = ethers.utils.parseEther('299999.0');
+const gasPriceForQuery = ethers.utils.parseEther('200000.0');
+const gasLimit = ethers.utils.parseEther('3000000.0');
+
+Window.GasPriceForTx = gasPriceForTx;
+Window.GasPriceForQuery = gasPriceForQuery;
+Window.GasLimit = gasLimit;
+
+const tokenAmount = ethers.utils.parseUnits('1.0');
+Window.TokenAmount = tokenAmount;
+
+/*
+export const getNonce = () => {
+    return new Promise((resolve, reject) => {
+        web3.ethers.getTransactionCount(web3.ethers.defaultAccount, (error, result) => {
+            if (error) reject(error);
+            resolve(web3.ethers.toHex(result));
+        })
+    })
+}
+export const getGasPrice = () => {
+    return new Promise((resolve, reject) => {
+        web3.ethers.getGasPrice((error, result) => {
+            if (error) reject(error);
+            resolve(web3.ethers.toHex(result.toNumber()));
+        })
+    })
+}
+
+export const sendRawTransaction = (rawTx) => {
+    const tx = new Tx(rawTx);
+    const privateKeyBuffer = Buffer.from(parkChainAddress, 'hex');
+    tx.sign(privateKeyBuffer);
+    const serializedTx = tx.seralize();
+    web3.ethers.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, hash) {
+        console.log('Error: ', err);
+        console.log('Hash: ', hash)
+    })
+}*/
 
 },{"ethers":7}],7:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,setImmediate){(function (){

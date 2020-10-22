@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/calcalbrad/ParkChain#readme",
   "dependencies": {
-    "ethers": "^5.0.17"
+    "ethers": "^5.0.17",
+    "http-server": "^0.12.3"
   }
 }
